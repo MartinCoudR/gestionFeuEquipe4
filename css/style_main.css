@@ -1,0 +1,630 @@
+
+#mapid { height: 180px; }
+
+label {
+  font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+  margin: .4rem;
+}
+
+/*.slider2 {
+    text-align: center;
+    margin-left: 80%;
+}*/
+
+/*-------------DEBUT BOUTON TYPE FEU-----------*/
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/*-------------FIN BOUTON TYPE FEU-----------*/
+
+.logo {
+    /*Style du logo du site*/
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin: 0;
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #e2d7cf;
+    /*#efe5ba*/
+    text-align: center;
+    font-variant: small-caps;
+}
+
+.logo em,
+.logo strong {
+    font-style: normal;
+}
+
+nav>ul {
+    /*Barre de menus (tous les navs)*/
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f5f2ef;
+    /*#f9ebcf*/
+}
+
+nav li {
+    /*float: left;*/
+    display: inline-block;
+}
+
+nav a {
+    display: block;
+    color: #333333;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    /*Changements lors du passage de la souris*/
+    color: #ffffff;
+    background-color: #e2d7cf;
+    /*#efe5ba*/
+}
+
+.active {
+    /*Classe définissant l'onglet actif sur lequel on se trouve*/
+    color: #ffffff;
+    background-color: #e2d7cf;
+    /*#efe5ba*/
+}
+
+/*Dropdown menu*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #f5f2ef;
+    min-width: 120px;
+}
+
+.dropdown_button {
+    background-color: #f5f2ef;
+    color: #333333;
+    padding: 14px;
+    font-size: 12px;
+    border: none;
+    font-size: 16px;
+}
+
+.dropdown:hover .dropdown_button {
+    color: #ffffff;
+    background-color: #e2d7cf;
+    cursor: pointer;
+}
+.dropdown:hover .dropdown_content {
+    display: block;
+}
+/*-----------*/
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+}
+
+body p {
+    color: #353535;
+    font-family: Arial;
+}
+
+.header_resa {
+    margin-bottom: 5%;
+}
+
+.voyage {
+    /*divs de la page d'acceuil = chaque destination de la page d'acceuil*/
+    height: 500px;
+    width: 100%;
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.voyage h2 {
+    /*nom de la destination*/
+    margin: 0;
+    text-align: center;
+    padding-top: 5%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 50px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #ffffff;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+}
+
+.voyage button {
+    /*bouton de réservation*/
+    position: absolute;
+    left: 44.7%;
+    background-color: transparent;
+    -moz-border-radius: 42px;
+    -webkit-border-radius: 42px;
+    border-radius: 42px;
+    border: 4px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 5px 25px;
+    text-decoration: none;
+}
+
+.voyage button:hover {
+    /*effet lors du passage de la souris sur le bouton*/
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.voyage p {
+    /*prix de la destination*/
+    text-align: center;
+    font-family: Arial;
+    color: #ffffff;
+    padding: 0;
+    margin: 56px;
+    font-weight: 500;
+    text-shadow: 1px 1px 0 #333333, 1px -1px 0 #333333, -1px 1px 0 #333333, -1px -1px 0 #333333, 1px 0px 0 #333333, 0px 1px 0 #333333, -1px 0px 0 #333333, 0px -1px 0 #333333, 1px 1px 1px rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+
+#tahiti {
+    /*image de fond de chaque destination sur l'acceuil*/
+    background-image: url("../images_villes/tahiti.jpeg");
+}
+
+#paris {
+    background-image: url("../images_villes/paris.jpg");
+}
+
+#ny {
+    background-image: url("../images_villes/ny.jpg");
+}
+
+#sri {
+    background-image: url("../images_villes/sri_lanka.jpg");
+}
+
+#sao {
+    background-image: url("../images_villes/sao_paulo.jpg");
+}
+
+#moscou {
+    background-image: url("../images_villes/moscou.jpg");
+}
+
+#titre {
+    padding: 0;
+    margin: 0;
+}
+
+#titre em {
+    padding: 0;
+    margin: 0;
+    /*padding-left: 18%*/
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-variant: small-caps;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: normal;
+    color: #b4aeaa;
+}
+
+.ensemble_grid {
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    grid-template-rows: 50% 50%;
+    background-color: transparent;
+}
+
+.ensemble_grid p {
+    font-family: Arial;
+    font-style: italic;
+}
+
+.ensemble_grid textarea {
+    max-width: 70%;
+}
+
+.elmt1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    /*padding-top: 10%;*/
+}
+
+.elmt1 p {
+    margin: 0;
+    padding-top: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 20%;
+}
+
+.elmt2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-image: url("../images_villes/tahiti_1.jpg");
+    background-position: center center;
+    /*background-size: 100%;*/
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.elmt3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-image: url("../images_villes/tahiti_2.jpg");
+    background-position: center center;
+    /*background-size: 100%;*/
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.elmt4 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+.elmt4 p {
+    margin: 20%;
+    margin-top: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.elmt5 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.divform {
+  padding-left: 5%;
+
+}
+
+form {
+    color: #353535;
+    font-family: Arial;
+    background-color: #f5f2ef;
+}
+
+form fieldset {
+    border: none;
+    margin: 0;
+    margin-top: 2%;
+}
+
+#form_title {
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 0;
+    padding: 7%;
+    padding-bottom: 3%;
+    font-size: 30px;
+    font-variant: small-caps;
+}
+
+form legend {
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+/*
+form div {
+    text-align: right;
+}*/
+/*-----------------Tooltips menu authentification--------------*/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    bottom: auto;
+    right: 128%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*-----------------------------footer--------------------------*/
+
+footer>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #f5f2ef
+}
+
+footer li {
+    float: left;
+    margin-left: 50px;
+}
+
+footer a {
+    display: block;
+    color: #333333;
+    text-align: center;
+    padding: 14px 16px;
+    margin-left: 100px;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    /*Changements lors du passage de la souris*/
+    color: #ffffff;
+    background-color: #e2d7cf;
+}
+
+#contact-button {
+    margin-left: 29%;
+}
+
+
+/*--------------------------A propos---------------------------*/
+
+section h2 {
+    text-align: center;
+    font-size: 25px;
+    font-family: arial;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+section p {
+    text-align: center;
+    font-size: 20px;
+    font-family: arial;
+    padding-bottom: 1%;
+}
+
+/*--------------------------recap resa---------------------------*/
+
+.tableau {
+    font-size: 20px;
+    font-family: Arial;
+}
+section table {
+    border-collapse: collapse;
+    margin-top:10px;
+    margin-bottom:50px;
+    margin-left: 35%;
+}
+
+section td {
+    border: 1px solid black;
+    text-align:center;
+    padding:5px
+}
+
+#prix_tot {
+    color: green;
+    font-weight: bold;
+}
+#prix_txt {
+    font-weight: bold;
+}
+section caption {
+    padding:10px;
+    text-align: center;
+    font-size:40px;
+}
+#sectionRecap {
+    padding-bottom: 15%;
+}
+
+ /*----------------Menu authentification-------------------*/
+
+ .form_connexion {
+    position: relative;
+    display: inline-block;
+}
+.form_connexion form {
+    display: none;
+    position: absolute;
+    background-color: #f5f2ef;
+    min-width: 100%;
+}
+.connexion_bouton {
+    font-style: normal;
+    background-color: #f5f2ef;
+    color: #333333;
+    padding: 14px;
+    font-size: 12px;
+    border: none;
+    font-size: 16px;
+}
+.form_connexion:hover .connexion_bouton {
+    color: #ffffff;
+    background-color: #e2d7cf;
+    cursor: pointer;
+}
+.form_connexion:hover form {
+    display: block;
+    width: 70%;
+}
+#li_connexion {
+    float: right;
+}
+#li_connexion input {
+    width: 90%;
+}
+
+/*-----------Filtrage------------*/
+
+.filtre {
+    position: fixed;
+    top: 77%;
+    z-index: 99;
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 8px;
+
+}
+.filtre ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    border: 4px solid #ffffff;
+    padding-left: 0;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+.filtre li {
+    text-align: center;
+}
+.filtre input {
+    width: 70%;
+    margin-bottom: 5px;
+    text-align: center;
+    /*margin-left: 5px;*/
+}
+.filtre button {
+    /*margin-left: 5px;*/
+    margin-bottom: 10px;
+}
+.filtre h3 {
+    font-family: Arial;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 1px 1px 0 #333333, 1px -1px 0 #333333, -1px 1px 0 #333333, -1px -1px 0 #333333, 1px 0px 0 #333333, 0px 1px 0 #333333, -1px 0px 0 #333333, 0px -1px 0 #333333, 1px 1px 1px rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    /*margin-left: 5px;*/
+}
+/*-----Panier-----*/
+#icon_panier {
+    float:right;
+    margin-top: 7px;
+}
+#section_panier button {
+    margin-left: 47%;
+    margin-bottom: 1%;
+}
+#section_panier div {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 4px solid #f5f2ef;
+    padding-left: 0;
+}
+
+/*----------top button--------*/
+
+#topbutton {
+    position: fixed;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 2%;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    bottom: 2.5%;
+    right: 1%;
+    z-index: 99;
+    font-size: 20px;
+    background-color: transparent;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    border: 4px solid #ffffff;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#topbutton:hover {
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: #333333
+}

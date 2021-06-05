@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style_main.css">
+    <script src="../js/js_main.js"></script>
+    <title>Prestige Tourisme</title>
+</head>
+
+<body onload = "verifCo();">
+    <header>
+        <!--Entête de navigation-->
+        <h1 class="logo"><em>Prestige</em> <strong>Tourisme</strong></h1>
+        <nav>
+            <ul>
+                <li><a class="active" href="">Accueil</a></li><!--Permet d'enlever l'espace blanc causé par inline block
+                --><li> 
+                    <div class="dropdown">
+                        <button class="dropdown_button">Réservation</button>
+                        <div class="dropdown_content">
+                            <a href="resa_tahiti.html?id=0">Tahiti</a>
+                            <a href="resa_tahiti.html?id=3">Paris</a>
+                            <a href="resa_tahiti.html?id=4">New York</a>
+                            <a href="resa_tahiti.html?id=1">Sri Lanka</a>
+                            <a href="resa_tahiti.html?id=2">Sao Paulo</a>
+                            <a href="resa_tahiti.html?id=5">Moscou</a>
+                        </div>
+                    </div>
+                </li>
+                    <li><a href="apropos.html">A propos & contact</a></li>
+                    <li><a href="projet.html"> Projet Majeure </a></li>
+                    <li id="li_connexion">
+                    <div class="tooltip">
+                        <span class="tooltip-text">Veuillez autoriser tous les cookies pour le bon fonctionnement du site !</span>
+                        <div class="form_connexion">
+                            <button class="connexion_bouton">Connexion</button>
+                            <form method="GET" onsubmit="authentification();">
+                                <input id="userID" type="text" title="identifiant" placeholder="Identifiant" />
+                                <input id="userPass" type="password" title="mot de passe" placeholder="Mot de passe" />
+                                <button type="submit" class="bouton_connexion">Connexion</button>
+                            </form>
+                        </div>
+                    </div>
+                </li><!--
+                --><li id="icon_panier"><img onclick="window.location.href='panier.html'" alt="icon_panier" src = "../images_villes/icon.png"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <a href="main.html" id=topbutton>TOP</a>
+        <div class = "filtre">
+            <ul>
+                <li>
+                    <h3>Filtrage</h3>
+                </li>
+                <li>
+                    <input id="prixMax" placeholder="Prix maximum">
+                </li>
+                <li>
+                    <input id="prixMin" placeholder="Prix minimum">
+                </li>
+                <li>
+                    <button onclick="filtrage();">Filtrer</button>
+                </li>        
+            </ul>
+        </div>
+
+        <div id="tahiti" class="voyage">
+            <h2><strong>Tahiti</strong></h2>
+            <button onclick="window.location.href ='resa_tahiti.html?id=0';">Réserver</button>
+            <p>230€/j par adulte</p>
+        </div>
+
+        <div id="paris" class="voyage">
+            <h2><strong>Paris</strong></h2>
+            <button onclick="window.location.href ='resa_tahiti.html?id=3';">Réserver</button>
+            <p>300€/j par adulte</p>
+        </div>
+
+        <div id="ny" class="voyage">
+            <h2><strong>New York</strong></h2>
+            <button onclick="window.location.href ='resa_tahiti.html?id=4';">Réserver</button>
+            <p>270€/j par adulte</p>
+        </div>
+
+        <div id="sri" class="voyage">
+            <h2><strong>Sri Lanka</strong></h2>
+            <button onclick="window.location.href ='resa_tahiti.html?id=1';">Réserver</button>
+            <p>330€/j par adulte</p>
+        </div>
+
+        <div id="sao" class="voyage">
+            <h2><strong>Sao Paulo</strong></h2>
+            <button onclick="window.location.href ='resa_tahiti.html?id=2';">Réserver</button>
+            <p>150€/j par adulte</p>
+        </div>
+
+        <div id="moscou" class="voyage">
+            <h2><strong>Moscou</strong></h2>
+            <button onclick="window.location.href ='resa_tahiti.html?id=5';">Réserver</button>
+            <p>96€/j par adulte</p>
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li id="contact-button"><a href="apropos.html">Contact</a></li>
+            <li><a href="">Mentions légales</a></li>
+        </ul>
+    </footer>
+
+</body>
+
+
+
+</html>
