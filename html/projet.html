@@ -36,19 +36,19 @@
         <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
           <div class="leaflet-tile-container leaflet-zoom-animated"
             style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation"
-              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2046/1361?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2046/1361?access_token=pk.eyJ1IjoibGFjb3VkYXNzZSIsImEiOiJja3BpZ25rZnIwOWtlMnJwbnZsbmU2dTVlIn0.f2r5uokWZV-thsx8aw5WaA"
               class="leaflet-tile leaflet-tile-loaded"
               style="width: 512px; height: 512px; transform: translate3d(-200px, -347px, 0px); opacity: 1;"><img alt=""
               role="presentation"
-              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2047/1361?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2047/1361?access_token=pk.eyJ1IjoibGFjb3VkYXNzZSIsImEiOiJja3BpZ25rZnIwOWtlMnJwbnZsbmU2dTVlIn0.f2r5uokWZV-thsx8aw5WaA"
               class="leaflet-tile leaflet-tile-loaded"
               style="width: 512px; height: 512px; transform: translate3d(312px, -347px, 0px); opacity: 1;"><img alt=""
               role="presentation"
-              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2046/1362?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2046/1362?access_token=pk.eyJ1IjoibGFjb3VkYXNzZSIsImEiOiJja3BpZ25rZnIwOWtlMnJwbnZsbmU2dTVlIn0.f2r5uokWZV-thsx8aw5WaA"
               class="leaflet-tile leaflet-tile-loaded"
               style="width: 512px; height: 512px; transform: translate3d(-200px, 165px, 0px); opacity: 1;"><img alt=""
               role="presentation"
-              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2047/1362?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+              src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/2047/1362?access_token=pk.eyJ1IjoibGFjb3VkYXNzZSIsImEiOiJja3BpZ25rZnIwOWtlMnJwbnZsbmU2dTVlIn0.f2r5uokWZV-thsx8aw5WaA"
               class="leaflet-tile leaflet-tile-loaded"
               style="width: 512px; height: 512px; transform: translate3d(312px, 165px, 0px); opacity: 1;">
           </div>
@@ -109,9 +109,9 @@
   </div>
   <script>
 
-    var mymap = L.map('mapid').setView([5.1632866, 46.2037008], 5);
+    var mymap = L.map('mapid').setView([45.747389, 4.828066], 10);
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFjb3VkYXNzZSIsImEiOiJja3BpZ25rZnIwOWtlMnJwbnZsbmU2dTVlIn0.f2r5uokWZV-thsx8aw5WaA', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -186,9 +186,12 @@
         </select>
         <br>
         <label for="liquidType">liquidType :</label>
-        <select id="liquidType" name="liquidType">
-          <option selected value="ALL">ALL</option>
-          <option value="Null">Null</option>
+        <select class="liquidType" id="liquidType" name="liquidType">
+          <option selected value="0" label="ALL">ALL</option>
+          <option value="1" label="WATER">WATER</option>
+          <option value="2" label="WATER_WITH_ADDITIVES">WATER_WITH_ADDITIVES</option>
+          <option value="3" label="CARBON_DIOXIDE">"CARBON_DIOXIDE"</option>
+          <option value="4" label="POWDER">POWDER</option>
         </select>
         <br>
         <label for="liquitQuantity"> qtt liquide transportée (L) (0 à 100):</label>
@@ -215,10 +218,86 @@
       <br><br>
 
       <button class="button" type="submit" id="buttonFormCreerCamion">Créer le camion</button>
+
+    </form>
+  </div>
+
+  <!-- ------------------FORMULAIRE MODIFICATION DE CAMION ----------------->
+
+
+  <div>
+    <h3>Modifier un camion</h3>
+    <form id="formModifierCamion">
+      <br>
+
+      <div>
+        <label for="idCamionM">ID du camion à modifier:</label>
+        <input type="number" id="idCamionM" name="idCamionM" min="0">
+        <br>
+        <label for="lon">Longitude (-180 à 180 (axe nord-sud Londres = 0)):</label>
+        <input type="number" id="lonM" name="lon" min="-180" max="180">
+        <br>
+        <label for="lat">Latitude (-180 à 180 (axe est-ouest équateur = 0)):</label>
+        <input type="number" id="latM" name="lat" min="-180" max="180">
+        <br>
+        <label for="typeM">Type :</label>
+        <select class="typeM" id="typeM" name="typeM">
+          <option value="0" label="CAR">CAR</option>
+          <option value="1" label="FIRE_ENGINE">FIRE_ENGINE</option>
+          <option value="2" label="PUMPER_TRUCK">PUMPER_TRUCK</option>
+          <option value="3" label="WATER_TENDER">WATER_TENDER</option>
+          <option value="4" label="TURNTABLE_LADDER_TRUCK">TURNTABLE_LADDER_TRUCK</option>
+          <option value="5" label="TRUCK">TRUCK</option>
+        </select>
+        <br>
+        <label for="liquidTypeM">liquidType :</label>
+        <select class="liquidTypeM" id="liquidTypeM" name="liquidTypeM">
+          <option selected value="0" label="ALL">ALL</option>
+          <option value="1" label="WATER">WATER</option>
+          <option value="2" label="WATER_WITH_ADDITIVES">WATER_WITH_ADDITIVES</option>
+          <option value="3" label="CARBON_DIOXIDE">"CARBON_DIOXIDE"</option>
+          <option value="4" label="POWDER">POWDER</option>
+        </select>
+        <br>
+        <label for="liquitQuantityM"> qtt liquide transportée (L) (0 à 100):</label>
+        <input type="number" id="liquidQuantityM" name="liquidQuantityM" min="0" max="100">
+        <br>
+        <label for="liquidConsumptionM"> consommation de liquide (L/s) (1 à 10):</label>
+        <input type="number" id="liquidConsumptionM" name="liquidConsumptionM" min="1" max="10">
+        <br>
+        <label for="fuelM"> qtt carburant restante (L) (0 à 100):</label>
+        <input type="number" id="fuelM" name="fuelM" min="0" max="100">
+        <br>
+        <label for="fuelComsumptionM"> consommation de carburant (L/km) (1 à 10):</label>
+        <input type="number" id="fuelComsumptionM" name="fuelComsumptionM" min="1" max="10">
+        <br>
+        <label for="crewMemberM"> nombre de pompiers (0 à 10):</label>
+        <input type="number" id="crewMemberM" name="crewMemberM" min="0" max="10">
+        <br>
+        <label for="crewMemberCapacityM"> nombre de places (0 à 10):</label>
+        <input type="number" id="crewMemberCapacityM" name="crewMemberCapacityM" min="0" max="10">
+        <br>
+        <label for="facilityRefIDM"> Identifiant caserne:</label>
+        <input type="number" id="facilityRefIDM" name="facilityRefIDM">
+      </div>
+      <br>
+
+      <button class="button" type="submit" id="buttonFormModifierCamion">Modifier le camion</button>
+
     </form>
   </div>
 
 
+  <!---------------------------FORMULAIRE SUPPRIMER UN CAMION------------------------------>
+
+  <div>
+    <h3>Supprimer un camion</h3>
+    <form id="formSupprimerCamion">
+      <label for="idCamion">ID du camion à supprimer:</label>
+      <input type="number" id="idCamion" name="idCamion" min="0">
+      <button class="button" type="submit" id="buttonFormSupprimerCamion">Supprimer le camion</button>
+    </form>
+  </div>
 
   <footer>
     <ul>
