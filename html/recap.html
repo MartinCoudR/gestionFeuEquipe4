@@ -109,7 +109,7 @@
   </div>
   <script>
 
-    var mymap = L.map('mapid').setView([5.1632866, 46.2037008], 5);
+    var mymap = L.map('mapid').setView([45.747389, 4.828066], 10);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFjb3VkYXNzZSIsImEiOiJja3BpZ25rZnIwOWtlMnJwbnZsbmU2dTVlIn0.f2r5uokWZV-thsx8aw5WaA', {
       maxZoom: 18,
@@ -186,9 +186,12 @@
         </select>
         <br>
         <label for="liquidType">liquidType :</label>
-        <select id="liquidType" name="liquidType">
-          <option selected value="ALL">ALL</option>
-          <option value="Null">Null</option>
+        <select class="liquidType" id="liquidType" name="liquidType">
+          <option selected value="0" label="ALL">ALL</option>
+          <option value="1" label="WATER">WATER</option>
+          <option value="2" label="WATER_WITH_ADDITIVES">WATER_WITH_ADDITIVES</option>
+          <option value="3" label="CARBON_DIOXIDE">"CARBON_DIOXIDE"</option>
+          <option value="4" label="POWDER">POWDER</option>
         </select>
         <br>
         <label for="liquitQuantity"> qtt liquide transportée (L) (0 à 100):</label>
@@ -218,7 +221,16 @@
     </form>
   </div>
 
+  <!---------------------------FORMULAIRE SUPPRIMER UN CAMION------------------------------>
 
+  <div>
+    <h3>Supprimer un camion</h3>
+    <form id="formSupprimerCamion">
+      <label for="idCamion">ID du camion à supprimer:</label>
+      <input type="number" id="idCamion" name="idCamion" min="0">
+      <button class="button" type="submit" id="buttonFormSupprimerCamion">Supprimer le camion</button>
+    </form>
+  </div>
 
   <footer>
     <ul>

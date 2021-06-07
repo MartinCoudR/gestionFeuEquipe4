@@ -23,22 +23,24 @@ function init() {
     let truck = Object.fromEntries(form.entries());
     //truck.type='valeurtypeV';
     console.log(truck)
-    let toto = {
-      "lon": 4.828066,
-      "lat": 45.747389,
-      "type": "CAR",
-      "efficiency": 10.0,
-      "liquidType": "WATER",
-      "liquidQuantity": 100.0,
-      "liquidConsumption": 1.0,
-      "fuel": 100.0,
-      "fuelConsumption": 10.0,
-      "crewMember": 8,
-      "crewMemberCapacity": 8,
-      "facilityRefID": 0
-    }
     createNewTruck(JSON.stringify(truck));
   })
+
+
+  document.getElementById("formSupprimerCamion").addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    let form2 = new FormData(ev.target);
+    let truck2 = Object.fromEntries(form2.entries());
+    console.log(truck2)
+    fetchDeleteCamion(truck2);
+  })
+/*
+    document.getElementById("buttonSupprimerCamion").addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    idCamion = document.getElementById('buttonSupprimerCamion').value;
+    console.log(truck2)
+  })
+*/
 
 }
 
@@ -63,8 +65,8 @@ function fetchFeu() {
     .then((liste) => {
       return liste.map((ligne) => {
         return {
-          "lon": ligne.lon,
-          "lat": ligne.lat,
+          "lat": ligne.lon,
+          "lon": ligne.lat,
           'range': ligne.range,
           'intensity': ligne.intensity,
           "type": ligne.type
@@ -104,16 +106,14 @@ function DemandeAffichageFeu() {
 // ----------------------- GESTION AFFICHAGE CAMION -----------------------------//
 
 
-
-
 function fetchCamion() {
   return fetch("http://localhost:8081/vehicle", { method: "GET" }) // localhost:8084/ListeVehicule
     .then(reponse2 => reponse2.json())
     .then((liste2) => {
       return liste2.map((ligne) => {
         return {
-          "lon": ligne.lon,
-          "lat": ligne.lat,
+          "lat": ligne.lon,
+          "lon": ligne.lat,
           "type": ligne.type,
           "efficiency": ligne.efficiency,
           "liquidType": ligne.liquidType,
@@ -156,6 +156,30 @@ function DemandeAffichageCamion() {
     }
   )
 }
+
+// ----------------------- GESTION SUPPRRESSION CAMION -----------------------------//
+
+
+function fetchDeleteCamion(idCamion) {
+ console.log(idCamion.idCamion)
+  return fetch("http://localhost:8081/vehicle/" + idCamion.idCamion, { method: "DELETE", headers: { 'Access-Control-Allow-Origin': '*' } }) // localhost:8084/ListeVehicule
+    .then(reponse3 => reponse3.json())
+    .then(reponse3 => console.log(reponse3))
+    
+    .catch((error) => {
+      alert("Oh lala il y a eu erreur ! " + erreur.message)
+      console.log('Erreur: ' + error.message)
+    });
+
+}
+
+
+
+
+
+
+// ----------------------- GESTION BOUTON DEROULAN (dans le formulaire) -----------------------------//
+
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
