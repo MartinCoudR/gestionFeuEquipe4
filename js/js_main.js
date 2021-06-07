@@ -25,13 +25,23 @@ function init() {
     fetchNewTruck(JSON.stringify(truck));
   })
 
-  document.getElementById("formModifierCamion").addEventListener("submit", (ev) => {
+  document.getElementById("formCreerCamion").addEventListener("submit", (ev) => {
     ev.preventDefault();
+    let form = new FormData(ev.target);
+    let truck = Object.fromEntries(form.entries());
+    //truck.type='valeurtypeV';
+    console.log(truck)
+    fetchNewTruck(JSON.stringify(truck));
+  })
+
+  document.getElementById("formModifierCamion").addEventListener("submit", (ev) => {
+    ev.preventDefault().remove(id);
     let form3 = new FormData(ev.target);
     let truck3 = Object.fromEntries(form3.entries());
-    //truck.type='valeurtypeV';
-    console.log(truck3)
-    fetchModifyCamion(truck3);
+    var truck3_1 = Object.fromEntries(form3.entries());
+    console.log(truck3, truck3_1);
+    truck3_1.remove[id];
+    fetchModifyCamion(JSON.stringify(truck3, truck3_1));
   })
 
   document.getElementById("formSupprimerCamion").addEventListener("submit", (ev) => {
@@ -86,7 +96,8 @@ function fetchCamion() {
           "fuelConsumption": ligne.fuelConsumption,
           "crewMember": ligne.crewMember,
           "crewMemberCapacity": ligne.crewMemberCapacity,
-          "facilityRefID": ligne.facilityRefID
+          "facilityRefID": ligne.facilityRefID,
+          "id": ligne.id
         }
       })
     })
@@ -108,11 +119,11 @@ function fetchNewTruck(truck) {
 }
 
 //MODIFIE UN CAMION
-function fetchModifyCamion(truck3) {
-  console.log("modification du camion d'id: " + truck3.idCamionM)
-  return fetch("http://localhost:8081/vehicle/" + truck3.idCamionM, { method: "PUT", body: truck3, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } })
-    .then(reponse3 => reponse3.json())
-    .then(reponse3 => console.log(reponse3))
+function fetchModifyCamion(truck3, truck3_1) {
+  console.log("modification du camion d'id: " + truck3.id)
+  return fetch("http://localhost:8081/vehicle/" + truck3.id, { method: "PUT", body: truck3_1, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } })
+/*    .then(reponse3 => reponse3.json())
+    .then(reponse3 => console.log(reponse3))*/
 
     .catch((error) => {
       alert("Oh lala il y a eu erreur ! " + error.message)
